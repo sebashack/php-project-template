@@ -1,6 +1,9 @@
 <?php
-function genWelcome($name) {
-    return "Welcome ". $name. "<br/ >";
+include 'db.php';
+
+function gen_welcome($name)
+{
+    return "Welcome ". $name . ", your name was saved!" . "<br/>";
 }
 
 if ($_POST["name"]) {
@@ -8,14 +11,15 @@ if ($_POST["name"]) {
         die("Name should be alpha");
     }
 
-    $greeting = genWelcome($_POST["name"]);
+    insert_name($db_conn, $_POST["name"]);
+
+    $greeting = gen_welcome($_POST["name"]);
 
     echo $greeting;
 
     exit();
 }
 ?>
-
 
 <html>
   <body>
