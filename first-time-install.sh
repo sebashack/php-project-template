@@ -8,6 +8,7 @@ export INSTALL_DIR=$ROOT/_install
 rm -rf  $INSTALL_DIR/style
 mkdir -p $INSTALL_DIR/style
 
+sudo apt update
 sudo apt install -y php8.1 net-tools php-xmlwriter wget
 
 if [ ! -d "/opt/lampp" ]; then
