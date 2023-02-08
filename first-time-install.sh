@@ -9,7 +9,7 @@ rm -rf  $INSTALL_DIR/style
 mkdir -p $INSTALL_DIR/style
 
 sudo apt update
-sudo apt install -y php8.1 net-tools php-xmlwriter wget
+sudo apt install -y php8.1 php8.1-curl net-tools php-xmlwriter wget
 
 if [ ! -d "/opt/lampp" ]; then
     cd $INSTALL_DIR
@@ -54,12 +54,5 @@ if [ ! -d "$INSTALL_DIR/composer" ]; then
 
     rm composer-setup.php
 
-    exit $RESULT
-
     cd -
 fi
-
-# Install laravel
-export COMPOSER_HOME="$INSTALL_DIR/composer"
-
-php $INSTALL_DIR/composer/composer.phar  global require "laravel/installer"

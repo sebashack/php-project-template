@@ -1,2 +1,4 @@
 _install
 .php-cs-fixer.cache
+vendor
+cache
